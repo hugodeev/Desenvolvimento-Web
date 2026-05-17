@@ -157,7 +157,7 @@ public class Main {
                         boolean temEstudante = false;
                         for (Matricula m : matriculas) {
                             if (m.getDisciplina().getId() == d.getId()) {
-                                // Mostra NOME e MATRÍCULA do estudante
+                                
                                 System.out.println("- " + m.getEstudante().getNome() + " (Matrícula: " + m.getEstudante().getMatricula() + ")");
                                 temEstudante = true;
                             }
@@ -169,7 +169,7 @@ public class Main {
                     
                     System.out.println("\n--- ESTUDANTES ---");
                     for (Estudante e : estudantes) {
-                        // Mostra NOME e MATRÍCULA (em vez de ID)
+                        
                         System.out.println("- " + e.getNome() + " (Matrícula: " + e.getMatricula() + ")");
                     }
                         break;

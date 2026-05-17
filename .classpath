@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Cadastro-duplo-arquitetura-tres-camadas/src"/>
+	<classpathentry kind="src" path="Cadastro-duplo-poo"/>
+	<classpathentry kind="src" path="CadastroPessoa"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
