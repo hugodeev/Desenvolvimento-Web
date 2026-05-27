@@ -21,6 +21,8 @@ public class StudentDTO {
     public String getCurso() { return curso; }
     public void setCurso(String curso) { this.curso = curso; }
 
-
+    public String toString() {
+        return "Student: name: " + name + ", mat: " + mat + ", curso: " + curso;
+    }
 
 }
