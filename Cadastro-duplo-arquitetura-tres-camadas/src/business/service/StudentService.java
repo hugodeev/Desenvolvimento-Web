@@ -1,6 +1,8 @@
 package business.service;
+import java.util.ArrayList;
 import java.util.List;
 
+import business_dto.StudentDTO;
 import model.entity.Student;
 import model.repository.StudentRepository;
 
@@ -13,8 +15,15 @@ public class StudentService {
         studentRepository.save(student);
     }
 
-    public List<Student> findAll() {
-       return studentRepository.findAll();
+    public List<StudentDTO> findAll() { // DTO: explicar
+       List<Student> students = studentRepository.findAll();
+       List<StudentDTO> studentDTO = new ArrayList<StudentDTO>();
+
+       for (Student student : students) {
+           studentDTO.add(new StudentDTO(student.getName(), student.getMat(), student.getCurso()));
+       }
+
+       return studentDTO;
     }
 
     public boolean update(String oldMat, String newName, String newMat, String newCurso) {

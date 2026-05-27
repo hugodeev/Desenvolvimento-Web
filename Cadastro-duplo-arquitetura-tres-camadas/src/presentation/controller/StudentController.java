@@ -4,7 +4,8 @@ import java.util.List;
 import business.service.PrinterService;
 import business.service.StudentService;
 import business.service.ValidationService;
-import model.entity.Student;
+import business_dto.StudentDTO;
+// import model.entity.StudentDTO; -- DTO: explicar
 
 public class StudentController {
 
@@ -20,10 +21,11 @@ public class StudentController {
     }
 
     //Listar
-    public void showAll() {
-        List<Student> students = studentService.findAll();
+    public void showAll() { // DTO: explicar
+        List<StudentDTO> students = studentService.findAll();
+
         printerService.println("Lista de estudantes: ");
-        for (Student student : students) {
+        for (StudentDTO student : students) {
             printerService.println(student.toString());
         }
     }

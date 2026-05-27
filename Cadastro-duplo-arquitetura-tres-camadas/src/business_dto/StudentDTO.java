@@ -1,9 +1,11 @@
-package model.entity;
+// DTO: explicar
+package business_dto;
 
-public class Student {
+public class StudentDTO {
+    
     private String name, mat, curso;
 
-    public Student(String name, String mat, String curso) {
+    public StudentDTO(String name, String mat, String curso) {
         super();
         this.name = name;
         this.mat = mat;
@@ -12,13 +14,13 @@ public class Student {
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
+
     public String getMat() { return mat; }
     public void setMat(String mat) { this.mat = mat; }
+
     public String getCurso() { return curso; }
     public void setCurso(String curso) { this.curso = curso; }
 
-    @Override
-    public String toString() {
-        return "Student: Nome:" + name + ", Matrícula:" + mat + ", Curso:" + curso;
-    }
+
+
 }
