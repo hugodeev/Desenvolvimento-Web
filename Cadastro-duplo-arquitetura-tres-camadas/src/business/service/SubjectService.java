@@ -1,8 +1,11 @@
 package business.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import business_dto.SubjectDTO;
 import model.entity.Subject;
 import model.repository.SubjectRepository;
+
 
 public class SubjectService {
     private SubjectRepository subjectRepository = new SubjectRepository();
@@ -13,8 +16,13 @@ public class SubjectService {
         subjectRepository.save(subject);
     }
 
-    public List<Subject> findAll() {
-       return subjectRepository.findAll();
+    public List<SubjectDTO> findAll() {
+        List<Subject> subjects = subjectRepository.findAll();
+        List<SubjectDTO> subjectDTO = new ArrayList<SubjectDTO>();
+        for (Subject subject : subjects) {
+            subjectDTO.add(new SubjectDTO(subject.getId(), subject.getName(), subject.getCargaHoraria(), subject.getProfessor()));
+        }
+        return subjectDTO;
     }
 
     public boolean update(String oldId, String newName, String newId, int newCargaHoraria, String newProfessor) {

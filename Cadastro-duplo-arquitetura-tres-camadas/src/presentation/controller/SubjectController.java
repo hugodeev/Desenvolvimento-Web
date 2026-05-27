@@ -4,7 +4,8 @@ import java.util.List;
 import business.service.PrinterService;
 import business.service.SubjectService;
 import business.service.ValidationService;
-import model.entity.Subject;
+import business_dto.SubjectDTO;
+// import model.entity.Subject; -- DTO: explicar
 
 public class SubjectController {
 
@@ -20,10 +21,11 @@ public class SubjectController {
     }
 
     // Listar
-    public void showAll() {
-        List<Subject> subjects = subjectService.findAll();
+    public void showAll() { // DTO: explicar
+        List<SubjectDTO> subjects = subjectService.findAll();
+
         printerService.println("Lista de disciplinas: ");
-        for (Subject subject : subjects) {
+        for (SubjectDTO subject : subjects) {
             printerService.println(subject.toString());
         }
     }
